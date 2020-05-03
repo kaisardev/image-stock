@@ -1,0 +1,9 @@
+.MainPage_header {
+  background-color: #000;
+  color: #fff;
+}
+
+.MainPage_search_input {
+  border: none;
+  outline: none;
+}

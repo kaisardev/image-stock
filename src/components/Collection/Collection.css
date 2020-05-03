@@ -1,0 +1,20 @@
+.Collection {
+  padding: 80px 0;
+}
+
+.Collection_wrapper {
+  column-count: 3;
+}
+
+.Collection_img_wrapper {
+  display: inline-block;
+  margin: 10px;
+  width: 100%;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.Collection_img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
