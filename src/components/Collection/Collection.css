@@ -18,3 +18,9 @@
   display: block;
   border-radius: 8px;
 }
+
+.Collection_no_result {
+  text-align: center;
+  font-size: 30px;
+  margin: 120px 0;
+}

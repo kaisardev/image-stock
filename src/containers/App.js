@@ -11,6 +11,7 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/" exact component={MainPage} />
+          <Route path="/search" exact component={MainPage} />
         </Switch>
       </Layout>
     </>
