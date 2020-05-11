@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../axios-unsplash";
+import { connect } from "react-redux";
+import { addToHistory } from "../../store/actions";
 import "./MainPage.css";
 
 import Header from "../../components/Header/Header";
@@ -32,6 +34,7 @@ const MainPage = (props) => {
 
   const searchByQuery = (e) => {
     e.preventDefault();
+    props.addToHistory(searchQuery);
     axios
       .get(`/search/photos?query=${searchQuery}`, {
         headers: {
@@ -60,4 +63,18 @@ const MainPage = (props) => {
   );
 };
 
-export default MainPage;
+const mapStateToProps = (store) => {
+  return {
+    historyRequests: store.historyRequests,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToHistory: (searchParam) => {
+      dispatch(addToHistory(searchParam));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

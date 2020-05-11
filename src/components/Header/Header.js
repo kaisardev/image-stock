@@ -20,9 +20,11 @@ const Header = (props) => {
             </form>
           </div>
           <div className="Header_collections">
-            {props.collections.map((item) => {
-              return <span key={item.title}>{item.title}</span>;
-            })}
+            {props.collections
+              ? props.collections.map((item) => {
+                  return <span key={item.title}>{item.title}</span>;
+                })
+              : null}
           </div>
         </div>
       </div>
