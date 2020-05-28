@@ -14,13 +14,6 @@ const Collection = (props) => {
     collectionList = (
       <div className="Collection">
         <div className="container Collection_wrapper">
-          {/* {props.photos.map((item) => {
-            return (
-              <div className="Collection_img_wrapper" key={item.id}>
-                <img className="Collection_img" src={item.urls.small} alt="" />
-              </div>
-            );
-          })} */}
           {props.photos.map((item) => {
             return (
               <Card
