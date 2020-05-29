@@ -19,6 +19,7 @@ const MainPage = (props) => {
       <Header
         searchInput={searchInputHandler}
         search={(e) => { props.onSearch(e, queryString) }}
+        page={props.match.path}
       />
       {
         props.loading ? <Preloader /> : <Collection photos={props.searchResult} />
@@ -30,7 +31,8 @@ const MainPage = (props) => {
 const mapStateToProps = (state) => {
   return {
     searchResult: state.searchResult,
-    loading: state.loading
+    loading: state.loading,
+    historyRequests: state.historyRequests
   };
 };
 

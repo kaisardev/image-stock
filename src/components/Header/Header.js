@@ -1,5 +1,7 @@
 import React from "react";
 import "./Header.css";
+import Search from "./Search/Search";
+import HeaderList from "./HeaderList/HeaderList";
 
 const Header = (props) => {
   return (
@@ -7,25 +9,16 @@ const Header = (props) => {
       <div className="Header">
         <div className="container">
           <div className="Header_input_wrapper">
-            <form onSubmit={props.search}>
-              <input
-                type="text"
-                onChange={(e) => {
-                  props.searchInput(e);
-                }}
-                className="Header_input"
-                placeholder="Поиск"
-              />
-              <div className="Header_line"></div>
-            </form>
+            {
+              props.page === "/history" ?
+                <h1>Ваши запросы</h1> :
+                <Search
+                  search={props.search}
+                  searchInput={props.searchInput}
+                />
+            }
           </div>
-          <div className="Header_collections">
-            {props.collections
-              ? props.collections.map((item) => {
-                  return <span key={item.title}>{item.title}</span>;
-                })
-              : null}
-          </div>
+          <HeaderList list={props.list} />
         </div>
       </div>
     </>

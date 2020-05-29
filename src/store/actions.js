@@ -1,4 +1,4 @@
-import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR, ADD_TO_HISTORY } from "./actionTypes";
+import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR, ADD_TO_HISTORY, ADD_TO_FAVORITES } from "./actionTypes";
 import axios from "../axios-unsplash";
 
 const CLIENT_ID = "Client-ID VIpiG3v43i61SAaWri3CbqBYl0FDVVdSJddPajfUAMU";
@@ -25,3 +25,7 @@ export const search = (e, queryString) => {
 export const addToHistory = (queryString) => {
   return { type: ADD_TO_HISTORY, queryString };
 };
+
+export const addToFavorites = (card) => {
+  return { type: ADD_TO_FAVORITES, card };
+}

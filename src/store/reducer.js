@@ -1,4 +1,4 @@
-import { FETCH_REQUEST, FETCH_SUCCESS, ADD_TO_HISTORY } from "./actionTypes";
+import { FETCH_REQUEST, FETCH_SUCCESS, ADD_TO_HISTORY, ADD_TO_FAVORITES } from "./actionTypes";
 
 const initialState = {
   search: "",
@@ -16,7 +16,9 @@ const reducer = (state = initialState, action) => {
     case FETCH_SUCCESS:
       return { ...state, loading: false, searchResult: action.result };
     case ADD_TO_HISTORY:
-      return { ...state, historyRequests: state.historyRequests.concat(action.queryString) }
+      return { ...state, historyRequests: state.historyRequests.concat(action.queryString) };
+    case ADD_TO_FAVORITES:
+      return { ...state, favourites: state.favourites.concat(action.card) };
     default:
       return state;
   }

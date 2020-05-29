@@ -1,23 +1,23 @@
 import React from "react";
 import "./FavoritePage.css";
 import { connect } from "react-redux";
+import Collection from "../../components/Collection/Collection";
 
 const FavoritePage = (props) => {
   return (
     <div className="FavoritePage">
-      {props.historyRequests
-        ? props.historyRequests.map((item) => {
-            return <p>{item}</p>;
-          })
-        : null}
+      <div className="container">
+        <h1 className="FavoritePage_title">Избранное</h1>
+        <Collection photos={props.favourites} />
+      </div>
     </div>
   );
 };
 
-const mapStateToProps = (store) => {
+const mapStateToProps = state => {
   return {
-    historyRequests: store.historyRequests,
-  };
-};
+    favourites: state.favourites
+  }
+}
 
 export default connect(mapStateToProps)(FavoritePage);

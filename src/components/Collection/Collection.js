@@ -1,5 +1,7 @@
 import React from "react";
 import "./Collection.css";
+import { connect } from "react-redux";
+import { addToFavorites } from "../../store/actions";
 import mainArrow from "../../assets/img/main-arrow.svg";
 import Card from "../Card/Card";
 
@@ -10,7 +12,7 @@ const Collection = (props) => {
     </h2>
   );
 
-  if (props.photos.length > 0) {
+  if (props.photos) {
     collectionList = (
       <div className="Collection">
         <div className="container Collection_wrapper">
@@ -22,6 +24,9 @@ const Collection = (props) => {
                 name={item.user.name}
                 instagram={item.user.instagram_username}
                 avatar={item.user.profile_image.small}
+                addedToFavorites={() => {
+                  props.onAddToFavorites(item)
+                }}
               />
             );
           })}
@@ -33,4 +38,10 @@ const Collection = (props) => {
   return collectionList;
 };
 
-export default Collection;
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddToFavorites: (item) => { dispatch(addToFavorites(item)) }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Collection);

@@ -10,7 +10,7 @@ const Card = (props) => {
         <p className="Card_info_name">{props.name}</p>
         <p className="Card_info_instagram">@{props.instagram}</p>
         <div className="Card_buttons">
-          <span className="Card_button card_button_favourite"></span>
+          <span className="Card_button card_button_favourite" onClick={props.addedToFavorites}></span>
           <span className="Card_button card_button_wide"></span>
           <span className="Card_button card_button_download"></span>
         </div>

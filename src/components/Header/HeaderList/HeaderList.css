@@ -1,0 +1,16 @@
+.HeaderList {
+  display: flex;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.HeaderList_item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.HeaderList_item:last-child {
+  margin-right: 0;
+}

@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import MainPage from "../containers/MainPage/MainPage";
 import FavoritePage from "../containers/FavoritePage/FavoritePage";
-import HistoryPage from "../containers/FavoritePage/FavoritePage";
+import HistoryPage from "../containers/HistoryPage/HistoryPage";
 
 function App() {
   return (
