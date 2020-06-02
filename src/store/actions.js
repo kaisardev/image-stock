@@ -14,6 +14,7 @@ export const search = (e, queryString) => {
         },
       })
       .then((response) => {
+        console.log(response.data);
         dispatch({ type: FETCH_SUCCESS, result: response.data.results });
       })
       .catch((error) => {

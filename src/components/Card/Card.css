@@ -68,10 +68,10 @@
   cursor: pointer;
 }
 
-.card_button_wide {
-  background-image: url("../../assets/img/Vector.svg");
+.card_button_maximize {
+  background-image: url("../../assets/img/maximize.svg");
 }
 
 .card_button_download {
-  background-image: url("../../assets/img/history.svg");
+  background-image: url("../../assets/img/download.svg");
 }

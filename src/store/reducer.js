@@ -18,17 +18,15 @@ const reducer = (state = initialState, action) => {
     case ADD_TO_HISTORY:
       return { ...state, historyRequests: state.historyRequests.concat(action.queryString) };
     case ADD_TO_FAVORITES:
-      return { ...state, favourites: state.favourites.concat(action.card) };
+      const favs = state.favourites.filter(item => item.id === action.card.id);
+      if (favs.length === 0) {
+        return { ...state, favourites: state.favourites.concat(action.card) };
+      }
+
+      return state;
     default:
       return state;
   }
-  // if (action.type === ADD_TO_HISTORY) {
-  //   return {
-  //     ...state,
-  //     historyRequests: [...state.historyRequests, action.request],
-  //   };
-  // }
-  // return state;
 };
 
 export default reducer;

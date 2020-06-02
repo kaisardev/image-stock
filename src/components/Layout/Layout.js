@@ -9,7 +9,6 @@ const Layout = (props) => {
     <>
       <Toolbar />
       <main>{props.children}</main>
-      <Footer />
     </>
   );
 };
