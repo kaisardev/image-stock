@@ -11,7 +11,7 @@ const Header = (props) => {
           <div className="Header_input_wrapper">
             {
               props.page === "/history" ?
-                <h1>Ваши запросы</h1> :
+                <h1 className="Header_title">Ваши запросы</h1> :
                 <Search
                   search={props.search}
                   searchInput={props.searchInput}

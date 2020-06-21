@@ -7,35 +7,36 @@ const Toolbar = (props) => {
   return (
     <div className="Toolbar">
       <div className="container Toolbar_header">
-        <div className="Toolbar_logo_wrapper">
-          <NavLink to="/" exact>
-            <img src={logo} alt="" />
-          </NavLink>
+        <NavLink to="/" exact className="Toolbar_logo">
+          <img src={logo} alt="" />
           <span className="Toolbar_logo_text">ImageStock</span>
-        </div>
+        </NavLink>
         <ul className="Toolbar_navigation_list">
-          <li className="Toolbar_navigation_item search">
+          <li className="">
             <NavLink
               to="/search"
-              className="Navlink"
-              activeClassName="Navlink_active">
-              Поиск
+              className="Toolbar_navlink"
+              activeClassName="Toolbar_navlink_active">
+              <span className="Toolbar_navlink_icon search"></span>
+              <span className="Toolbar_navlink_text">Поиск</span>
             </NavLink>
           </li>
-          <li className="Toolbar_navigation_item favorite">
+          <li className="">
             <NavLink
               to="/favorite"
-              className="Navlink"
-              activeClassName="Navlink_active">
-              Избранное
+              className="Toolbar_navlink"
+              activeClassName="Toolbar_navlink_active">
+              <span className="Toolbar_navlink_icon favorite"></span>
+              <span className="Toolbar_navlink_text">Избранное</span>
             </NavLink>
           </li>
-          <li className="Toolbar_navigation_item history">
+          <li className="">
             <NavLink
               to="/history"
-              className="Navlink"
-              activeClassName="Navlink_active">
-              История поиска
+              className="Toolbar_navlink"
+              activeClassName="Toolbar_navlink_active">
+              <span className="Toolbar_navlink_icon history"></span>
+              <span className="Toolbar_navlink_text">История поиска</span>
             </NavLink>
           </li>
         </ul>

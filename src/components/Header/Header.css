@@ -8,3 +8,21 @@
   text-align: center;
   margin-bottom: 30px;
 }
+
+.Header_title {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .Header {
+    padding: 10px 0;
+  }
+
+  .Header_title {
+    font-size: 24px;
+  }
+
+  .Header_input_wrapper {
+    margin-bottom: 20px;
+  }
+}

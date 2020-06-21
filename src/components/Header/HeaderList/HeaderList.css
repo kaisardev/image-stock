@@ -14,3 +14,9 @@
 .HeaderList_item:last-child {
   margin-right: 0;
 }
+
+@media screen and (max-width: 1140px) {
+  .HeaderList {
+    padding: 0 15px;
+  }
+}
